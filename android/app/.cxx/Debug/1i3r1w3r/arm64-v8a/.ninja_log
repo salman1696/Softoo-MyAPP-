@@ -1,0 +1,13 @@
+# ninja log v5
+5	164	0	/Users/a1234/MyApp/android/app/.cxx/Debug/1i3r1w3r/arm64-v8a/CMakeFiles/cmake.verify_globs	c80e4c8fddaae31d
+164	275	1689630387	build.ninja	9d79e27864d59eb0
+1	17	0	/Users/a1234/MyApp/android/app/.cxx/Debug/1i3r1w3r/arm64-v8a/CMakeFiles/cmake.verify_globs	c80e4c8fddaae31d
+0	13	0	clean	565068210552f12
+4	206	0	/Users/a1234/MyApp/android/app/.cxx/Debug/1i3r1w3r/arm64-v8a/CMakeFiles/cmake.verify_globs	c80e4c8fddaae31d
+206	327	1689633444	build.ninja	9d79e27864d59eb0
+0	16	0	/Users/a1234/MyApp/android/app/.cxx/Debug/1i3r1w3r/arm64-v8a/CMakeFiles/cmake.verify_globs	c80e4c8fddaae31d
+0	17	0	clean	565068210552f12
+6	113	0	/Users/a1234/MyApp/android/app/.cxx/Debug/1i3r1w3r/arm64-v8a/CMakeFiles/cmake.verify_globs	c80e4c8fddaae31d
+114	228	1689633601	build.ninja	9d79e27864d59eb0
+0	16	0	/Users/a1234/MyApp/android/app/.cxx/Debug/1i3r1w3r/arm64-v8a/CMakeFiles/cmake.verify_globs	c80e4c8fddaae31d
+0	14	0	clean	565068210552f12
