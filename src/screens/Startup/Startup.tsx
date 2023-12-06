@@ -11,8 +11,7 @@ const Startup = ({ navigation }: ApplicationScreenProps) => {
         resolve(true);
       }, 2000),
     );
-    await setDefaultTheme({ theme: 'default', darkMode: null });
-    // navigation.push('Login')
+    setDefaultTheme({ theme: 'default', darkMode: null });
     navigation.reset({
       index: 0,
       routes: [{ name: 'Main' }],
@@ -26,7 +25,6 @@ const Startup = ({ navigation }: ApplicationScreenProps) => {
   return (
     <View style={styles.mainCon}>
       <StatusBar
-        // barStyle={darkMode ? 'light-content' : 'dark-content'}
         barStyle={'light-content'}
         hidden={true}
       />

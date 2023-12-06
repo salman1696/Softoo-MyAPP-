@@ -3,18 +3,15 @@ import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { ApplicationScreenProps } from '../../../../@types/navigation';
 import { Colors } from 'MyApp/src/theme/Variables';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ProductModal from 'MyApp/src/components/ProductModal/ProductModal';
 
 const Products = ({ navigation }: ApplicationScreenProps) => {
-    const dispatch = useDispatch()
-    const { rItems, user, lang } = useSelector((state: any) => state.user);
+    const { rItems } = useSelector((state: any) => state.user);
 
     return (
         <SafeAreaView style={styles.centeredView}>
-            <StatusBar
-                barStyle={'light-content'}
-            />
+            <StatusBar barStyle={'light-content'} />
             <View style={styles.mainCon1}>
                 <Text style={styles.mainH1}>Products</Text>
                 {rItems.length ? <FlatList
@@ -27,7 +24,6 @@ const Products = ({ navigation }: ApplicationScreenProps) => {
                     <Text style={styles.mainH2}>No Product Found</Text>
                 }
             </View>
-
         </SafeAreaView>
     );
 };

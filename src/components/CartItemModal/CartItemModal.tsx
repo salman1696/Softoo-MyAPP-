@@ -1,12 +1,8 @@
 import React, { useMemo, useState } from 'react';
-import { Alert, Image, ImageBackground, Text } from 'react-native';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { Colors } from 'MyApp/src/theme/Variables';
-import { useTheme } from 'MyApp/src/hooks';
+import { StyleSheet, View, Image, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { setCartItems, setRItems, } from 'MyApp/src/store/userReducer';
+import { setRItems, } from 'MyApp/src/store/userReducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { count } from 'console';
 
 interface Props {
     item: object;
@@ -14,52 +10,32 @@ interface Props {
 }
 
 const CartItemModal = ({ item, navigation }: Props) => {
-
-
     const { rItems } = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
 
     return (
-        <View
-            style={styles.main}
-        >
-            <View style={{ flex: 1, padding: 12, flexDirection: "row" }}>
-                <View style={{ flex: 0.25 }}>
+        <View style={styles.main}>
+            <View style={styles.sub_main}>
+                <View style={styles.image_con}>
                     <Image
-
                         source={{
                             uri: item?.id === 1 ? 'https://cdn-img.prettylittlething.com/9/0/a/a/90aa90903a135ee59594f47c7685aa7ef3046e44_cly8063_1.jpg' : item.img + "",
-
                         }}
-                        style={{ width: 95, height: 145, borderRadius: 10 }}
+                        style={styles.image}
                     />
                 </View>
-                <View
-                    style={styles.name_holder}
-                >
+                <View style={styles.name_holder} >
                     <Text style={styles.header_bold}>{item?.name}</Text>
-                    <View
-                        style={{
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                        }}
-                    >
-                        <Text style={styles.header_white}>Variant Color : <Text style={styles.header_bold}>{item?.colour}</Text> </Text>
-
+                    <View style={styles.varriant}>
+                        <Text style={styles.header_white}>Variant Color : <Text style={styles.header_bold}>{item?.colour}</Text></Text>
                     </View>
-                    <View
-                        style={{ height: 1, width: "100%", backgroundColor: "#00000010" }}
-                    />
-                    <View
-                        style={styles.count_container}
-                    >
+                    <View style={styles.divider} />
+                    <View style={styles.count_container}>
                         <View>
                             <Text style={styles.price_text}>$ {item?.price}</Text>
                         </View>
-                        <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 18 }}>
-                            <View
-                                style={styles.add_minus}
-                            >
+                        <View style={styles.counter_con}>
+                            <View style={styles.add_minus}  >
                                 <Icon
                                     name={item?.count !== 1 ? "minus-a" : 'trash'}
                                     type="fontisto"
@@ -74,9 +50,7 @@ const CartItemModal = ({ item, navigation }: Props) => {
                                 />
                             </View>
                             <Text style={styles.count}>{item?.count} </Text>
-                            <View
-                                style={styles.add_minus}
-                            >
+                            <View style={styles.add_minus}  >
                                 <Icon
                                     name="plus-a"
                                     type="fontisto"
@@ -86,17 +60,24 @@ const CartItemModal = ({ item, navigation }: Props) => {
                                 />
                             </View>
                         </View>
-
                     </View>
                 </View>
             </View>
-
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     main: { margin: 10, backgroundColor: "#fff", borderRadius: 10 },
+    sub_main: { flex: 1, padding: 12, flexDirection: "row" },
+    image_con: { flex: 0.25 },
+    image: { width: 95, height: 145, borderRadius: 10 },
+    varriant: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+    },
+    divider: { height: 1, width: "100%", backgroundColor: "#00000010" },
+    counter_con: { flexDirection: "row", alignItems: "center", paddingHorizontal: 18 },
     header_yellow: {
         color: "#000",
         fontSize: 18,
