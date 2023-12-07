@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import { setDefaultTheme } from '../../store/theme';
-import { ApplicationScreenProps } from '../../../@types/navigation';
-import { Colors } from 'MyApp/src/theme/Variables';
+import React, { useEffect } from "react";
+import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { setDefaultTheme } from "../../store/theme";
+import { ApplicationScreenProps } from "../../../@types/navigation";
+import { Colors } from "../../../src/theme/Variables";
 
 const Startup = ({ navigation }: ApplicationScreenProps) => {
   const init = async () => {
-    await new Promise(resolve =>
+    await new Promise((resolve) =>
       setTimeout(() => {
         resolve(true);
-      }, 2000),
+      }, 2000)
     );
-    setDefaultTheme({ theme: 'default', darkMode: null });
+    setDefaultTheme({ theme: "default", darkMode: null });
     navigation.reset({
       index: 0,
-      routes: [{ name: 'Main' }],
+      routes: [{ name: "Main" }],
     });
   };
 
@@ -24,10 +24,7 @@ const Startup = ({ navigation }: ApplicationScreenProps) => {
 
   return (
     <View style={styles.mainCon}>
-      <StatusBar
-        barStyle={'light-content'}
-        hidden={true}
-      />
+      <StatusBar barStyle={"light-content"} hidden={true} />
       <View style={styles.textCon}>
         <Text style={styles.spText}>Splash</Text>
       </View>
@@ -37,14 +34,14 @@ const Startup = ({ navigation }: ApplicationScreenProps) => {
 const styles = StyleSheet.create({
   mainCon: { flex: 1, backgroundColor: Colors.bgGray, paddingVertical: 20 },
   textCon: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   spText: {
     fontSize: 54,
-    fontWeight: '700',
-    textAlign: 'center',
+    fontWeight: "700",
+    textAlign: "center",
     color: Colors.primary,
   },
 });
