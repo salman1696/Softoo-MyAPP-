@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { SIZING } from './sizing';
-import { SPACING } from './spacing';
+import { SIZING } from './Sizing';
+import { SPACING } from './Spacing';
 import { Colors } from './themes/default_dark/Variables';
 
-//styles
+// global styles
 
 export const GST = StyleSheet.create({
   ...SPACING,
