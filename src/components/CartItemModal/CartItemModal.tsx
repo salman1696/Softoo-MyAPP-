@@ -15,8 +15,8 @@ const CartItemModal = ({ item, navigation }: Props) => {
 
   return (
     <View style={styles.main}>
-      <View style={styles.sub_main}>
-        <View style={styles.image_con}>
+      <View style={styles.subMain}>
+        <View style={styles.imageCon}>
           <Image
             source={{
               uri:
@@ -27,21 +27,21 @@ const CartItemModal = ({ item, navigation }: Props) => {
             style={styles.image}
           />
         </View>
-        <View style={styles.name_holder}>
-          <Text style={styles.header_bold}>{item?.name}</Text>
+        <View style={styles.nameCon}>
+          <Text style={styles.headerBold}>{item?.name}</Text>
           <View style={styles.varriant}>
-            <Text style={styles.header_white}>
+            <Text style={styles.headerWhite}>
               Variant Color :{" "}
-              <Text style={styles.header_bold}>{item?.colour}</Text>
+              <Text style={styles.headerBold}>{item?.colour}</Text>
             </Text>
           </View>
           <View style={styles.divider} />
-          <View style={styles.count_container}>
+          <View style={styles.countCon}>
             <View>
-              <Text style={styles.price_text}>$ {item?.price}</Text>
+              <Text style={styles.priceText}>$ {item?.price}</Text>
             </View>
-            <View style={styles.counter_con}>
-              <View style={styles.add_minus}>
+            <View style={styles.counterCon}>
+              <View style={styles.addMinus}>
                 <Icon
                   name={item?.count !== 1 ? "minus-a" : "trash"}
                   type="fontisto"
@@ -63,7 +63,7 @@ const CartItemModal = ({ item, navigation }: Props) => {
                 />
               </View>
               <Text style={styles.count}>{item?.count} </Text>
-              <View style={styles.add_minus}>
+              <View style={styles.addMinus}>
                 <Icon
                   name="plus-a"
                   type="fontisto"
@@ -90,32 +90,26 @@ const CartItemModal = ({ item, navigation }: Props) => {
 
 const styles = StyleSheet.create({
   main: { margin: 10, backgroundColor: "#fff", borderRadius: 10 },
-  sub_main: { flex: 1, padding: 12, flexDirection: "row" },
-  image_con: { flex: 0.25 },
+  subMain: { flex: 1, padding: 12, flexDirection: "row" },
+  imageCon: { flex: 0.25 },
   image: { width: 95, height: 145, borderRadius: 10 },
   varriant: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   divider: { height: 1, width: "100%", backgroundColor: "#00000010" },
-  counter_con: {
+  counterCon: {
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 18,
   },
-  header_yellow: {
-    color: "#000",
-    fontSize: 18,
-    textAlign: "left",
-    fontWeight: "100",
-  },
-  name_holder: {
+  nameCon: {
     flex: 0.75,
     marginLeft: 10,
     justifyContent: "center",
     alignItems: "flex-start",
   },
-  count_container: {
+  countCon: {
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -123,13 +117,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 10,
   },
-  add_minus: {
+  addMinus: {
     backgroundColor: "#35353520",
     marginLeft: 5,
     padding: 18,
     borderRadius: 30,
   },
-  header_white: {
+  headerWhite: {
     color: "#000",
     fontSize: 18,
     marginTop: 2,
@@ -144,7 +138,7 @@ const styles = StyleSheet.create({
     left: 4,
     fontWeight: "400",
   },
-  header_bold: {
+  headerBold: {
     color: "#000",
     fontSize: 18,
     marginTop: 2,
@@ -152,7 +146,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontWeight: "400",
   },
-  price_text: {
+  priceText: {
     color: "#000",
     fontSize: 16,
     marginTop: 2,

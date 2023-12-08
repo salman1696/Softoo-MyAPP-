@@ -44,14 +44,14 @@ const Cart = ({ navigation }: ApplicationScreenProps) => {
         )}
       </View>
       {rItems.filter((i: any) => i.count > 0).length > 0 && (
-        <View style={styles.total_con}>
+        <View style={styles.totalCon}>
           <Text style={styles.mainH2}>Total</Text>
           <Text style={styles.mainH2}> $ {totalprice.toFixed(2)}</Text>
         </View>
       )}
       {rItems.filter((i: any) => i.count > 0).length > 0 && (
-        <View style={styles.checkout_con}>
-          <Text style={styles.text_checkout}>Checkout</Text>
+        <View style={styles.checkoutCon}>
+          <Text style={styles.textCheckout}>Checkout</Text>
         </View>
       )}
     </SafeAreaView>
@@ -69,14 +69,14 @@ const styles = StyleSheet.create({
   },
   mainH1: { fontSize: 28, fontWeight: "700", color: Colors.white },
   mainH2: { fontSize: 32, fontWeight: "700", color: Colors.white },
-  text_checkout: {
+  textCheckout: {
     flex: 1,
     fontSize: 32,
     fontWeight: "700",
     textAlign: "center",
     color: Colors.textGray400,
   },
-  checkout_con: {
+  checkoutCon: {
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     padding: 10,
     alignSelf: "center",
   },
-  total_con: {
+  totalCon: {
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",

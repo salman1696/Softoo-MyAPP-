@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { StyleSheet, TouchableOpacity, View, Image, Text } from "react-native";
-import { Colors } from "MyApp/src/theme/Variables";
-import { setRItems } from "MyApp/src/store/userReducer";
+import { Colors } from "../../../src/theme/Variables";
+import { setRItems } from "./../../../src/store/userReducer";
 import { useDispatch, useSelector } from "react-redux";
 
 interface Props {
   item: object;
-  navigation: any;
+  navigation: any; 
 }
 
 const ProductModal = ({ item, navigation }: Props) => {
@@ -31,8 +31,8 @@ const ProductModal = ({ item, navigation }: Props) => {
 
   return (
     <View style={styles.main}>
-      <View style={styles.sub_main}>
-        <View style={styles.image_con}>
+      <View style={styles.subMain}>
+        <View style={styles.imageCon}>
           <Image
             source={{
               uri:
@@ -43,23 +43,23 @@ const ProductModal = ({ item, navigation }: Props) => {
             style={styles.image}
           />
         </View>
-        <View style={styles.name_holder}>
-          <Text style={styles.header_bold}>{item?.name}</Text>
+        <View style={styles.nameCon}>
+          <Text style={styles.headerBold}>{item?.name}</Text>
           <View style={styles.varriant}>
-            <Text style={styles.header_white}>
+            <Text style={styles.headerWhite}>
               Variant Color :{" "}
-              <Text style={styles.header_bold}>{item?.colour}</Text>{" "}
+              <Text style={styles.headerBold}>{item?.colour}</Text>{" "}
             </Text>
           </View>
           <View style={styles.divider} />
-          <View style={styles.count_container}>
+          <View style={styles.countCon}>
             <View>
-              <Text style={styles.price_text}>$ {item?.price}</Text>
+              <Text style={styles.priceText}>$ {item?.price}</Text>
             </View>
             <TouchableOpacity
               onPress={() => handleAddtoCart(item)}
               style={[
-                styles.add_cart,
+                styles.addCart,
                 {
                   backgroundColor:
                     item?.count === 0 ? Colors.primary : Colors.error,
@@ -68,7 +68,7 @@ const ProductModal = ({ item, navigation }: Props) => {
             >
               <Text
                 style={[
-                  styles.header_white,
+                  styles.headerWhite,
                   { color: item?.count === 0 ? "#000" : "#FFF" },
                 ]}
               >
@@ -84,27 +84,22 @@ const ProductModal = ({ item, navigation }: Props) => {
 
 const styles = StyleSheet.create({
   main: { margin: 10, backgroundColor: "#fff", borderRadius: 10 },
-  sub_main: { flex: 1, padding: 12, flexDirection: "row" },
-  image_con: { flex: 0.25 },
+  subMain: { flex: 1, padding: 12, flexDirection: "row" },
+  imageCon: { flex: 0.25 },
   image: { width: 95, height: 145, borderRadius: 10 },
   varriant: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  name_holder: {
+  nameCon: {
     flex: 0.75,
     marginLeft: 10,
     justifyContent: "center",
     alignItems: "flex-start",
   },
   divider: { height: 1, width: "100%", backgroundColor: "#00000010" },
-  header_yellow: {
-    color: "#000",
-    fontSize: 18,
-    textAlign: "left",
-    fontWeight: "100",
-  },
-  count_container: {
+
+  countCon: {
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -112,14 +107,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 10,
   },
-  add_cart: {
+  addCart: {
     flexDirection: "row",
     alignItems: "center",
     padding: 5,
     marginEnd: 19,
     borderRadius: 15,
   },
-  header_white: {
+  headerWhite: {
     color: "#000",
     fontSize: 18,
     marginVertical: 12,
@@ -127,7 +122,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontWeight: "100",
   },
-  header_bold: {
+  headerBold: {
     color: "#000",
     fontSize: 18,
     marginTop: 2,
@@ -135,7 +130,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontWeight: "400",
   },
-  price_text: {
+  priceText: {
     color: "#000",
     fontSize: 16,
     marginTop: 2,
