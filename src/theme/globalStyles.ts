@@ -3,6 +3,8 @@ import { SIZING } from './sizing';
 import { SPACING } from './spacing';
 import { Colors } from './themes/default_dark/Variables';
 
+//styles
+
 export const GST = StyleSheet.create({
   ...SPACING,
   ...SIZING,
